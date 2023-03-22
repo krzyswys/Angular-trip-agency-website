@@ -1,4 +1,5 @@
-# Wycieczki
+# This is done as a part of introduction to web application course at AGH university.
+TOFiX: Database, login
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
