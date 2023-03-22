@@ -1,0 +1,91 @@
+<header>
+  <div class="tour-add-container" *ngIf="addtour">
+    <form [formGroup]="TourAddForm">
+      <h2>Dodaj opinie</h2>
+
+      <div class="input-container">
+        <input
+          placeholder="Nick: "
+          id="name"
+          type="text"
+          formControlName="tourname"
+        />
+        <input
+          placeholder="Nazwa wycieczki"
+          id="Nazwa"
+          type="text"
+          formControlName="Nazwa"
+        />
+
+        <input
+          placeholder="Opinie"
+          id="Opinie"
+          type="text"
+          formControlName="Opinie"
+        />
+
+        <input
+          placeholder="Data zakupy: "
+          id="buytDate"
+          type="text"
+          formControlName="buytDate"
+        />
+      </div>
+
+      <button type="submit" (click)="submitForm()">Dodaj</button>
+      <p *ngIf="wrong">Błędne dane</p>
+      <p *ngIf="ok"></p>
+    </form>
+  </div>
+</header>
+<div
+  class="addTour"
+  [ngStyle]="{
+    transform: getAddTour() ? 'rotate(90deg)' : 'rotate(0deg)'
+  }"
+>
+  <span class="material-symbols-outlined"> control_point_duplicate </span>
+</div>
+<div class="addTourGlow" (click)="addTour()"></div>
+<div
+  class="bg-image"
+  [ngStyle]="{ 'background-image': 'url(' + tour.imagelink + ')' }"
+></div>
+<main>
+  <div class="top-container">
+    <div class="intoNStars">
+      <div class="info-container">
+        <p>{{ tour.name }}</p>
+        <p>{{ tour.destination }} / {{ tour.destinationCity }}</p>
+        <p>{{ tour.price }} {{ tour.unit }}</p>
+        <p>Ocena {{ tour.stars }} /5</p>
+        <a routerLink="/tours"><div class="menu-item">Wycieczki</div></a>
+        <div class="seats-stars-container">
+          <div class="stars">
+            <span
+              class="material-symbols-outlined"
+              *ngFor="let item of getStars(tour.stars); let i = index"
+            >
+              star_half
+            </span>
+          </div>
+        </div>
+      </div>
+      <app-star-rating
+        (ratingChanged)="ratingEventHandler(tour, $event)"
+        [tourStars]="tour.stars"
+      ></app-star-rating>
+    </div>
+
+    <div class="mapNPic-container">
+      <iframe
+        class="mapg"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.9991949144505!2d19.944118550992734!3d50.067576722658835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b1af992f8a3%3A0x4de5808f747be637!2sPawia%2C%2030-001%20Krak%C3%B3w!5e0!3m2!1spl!2spl!4v1673134440748!5m2!1spl!2spl"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <div class="slider">Lista zdjęc + opninie</div>
+    </div>
+  </div>
+</main>

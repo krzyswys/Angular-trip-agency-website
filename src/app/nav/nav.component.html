@@ -1,0 +1,96 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+</head>
+
+<div class="page-container">
+  <div class="items-container">
+    <a routerLink="/mainPage">
+      <div class="logo">
+        <h1>Biuro</h1>
+        <span class="material-symbols-outlined"> flight_takeoff </span>
+      </div>
+    </a>
+    <div class="menu-items">
+      <a routerLink="/tours"><div class="menu-item">Wycieczki</div></a>
+      <a routerLink="/basket" class="basket"
+        ><div class="basket-container">
+          <span class="material-symbols-outlined"> shopping_basket </span>
+          <p>( 0 ) 0zł</p>
+        </div>
+        <app-basked-small></app-basked-small>
+      </a>
+
+      <a routerLink="/addTour"
+        ><div class="menu-item">Dodawanie wycieczki</div></a
+      >
+      <a
+        ><div class="menu-item">
+          <span class="material-symbols-outlined"> history </span>
+        </div></a
+      >
+      <a
+        ><div class="menu-item">
+          <span class="material-symbols-outlined"> notifications </span>
+        </div></a
+      >
+      <a
+        ><div class="menu-item">
+          <span class="material-symbols-outlined"> person </span>
+        </div></a
+      >
+    </div>
+  </div>
+</div>
+<!-- ----------------------------------------------------- -->
+<section class="mobile-menu-container">
+  <label class="menu-btn">
+    <input type="checkbox" class="check" id="checked" />
+    <div class="ham1"></div>
+    <div class="ham2"></div>
+    <div class="ham3"></div>
+  </label>
+
+  <div class="dropdown">
+    <a routerLink="/mainPage">
+      <div class="logo">
+        <h1>Biuro</h1>
+        <span class="material-symbols-outlined"> flight_takeoff </span>
+      </div>
+    </a>
+    <a routerLink="/tours"><div class="menu-item">Wycieczki</div></a>
+    <a routerLink="/basket" class="basket"
+      ><div class="basket-container">
+        <span class="material-symbols-outlined"> shopping_basket </span>
+        <p>( 0 ) 0zł</p>
+      </div>
+    </a>
+
+    <a routerLink="/addTour"
+      ><div class="menu-item">Dodawanie wycieczki</div></a
+    >
+    <a
+      ><div class="menu-item">
+        <span class="material-symbols-outlined"> history </span>
+      </div></a
+    >
+    <a
+      ><div class="menu-item">
+        <span class="material-symbols-outlined"> notifications </span>
+      </div></a
+    >
+    <a
+      ><div class="menu-item">
+        <span class="material-symbols-outlined"> person </span>
+      </div></a
+    >
+  </div>
+</section>
+
+<router-outlet> </router-outlet>
